@@ -92,40 +92,7 @@ public class KetNoiSQL {
         nhap = n.nextInt();
         switch (nhap) {
             case 1:
-                String accname="";
-                String passWord = "";
-                Scanner nn = new Scanner(System.in);
-                System.out.println("Nhap Accname:");
-                accname = nn.nextLine();
-                System.out.println("Nhap Password");
-                passWord = nn.nextLine();
-                System.out.println("Tài Khoản");
-                
-                try {
-
-                    ResultSet rs = kn.GetResultSet("Account");//Table Name
-
-                    if (rs.next()) {
-
-                        System.out.println("ton tai");//Field Name
-
-                    }
-                    else
-                    {
-                        System.out.println("khong ton tai");
-                    }
-
-                    kn.Close();
-
-                } catch (SQLException ex) {
-
-                    Logger.getLogger(KetNoiSQL.class.getName()).log(Level.SEVERE, null, ex);
-
-                } catch (Exception ex) {
-
-                    Logger.getLogger(KetNoiSQL.class.getName()).log(Level.SEVERE, null, ex);
-
-                }
+               
                 break;
             case 2:
                 break;
@@ -137,11 +104,9 @@ public class KetNoiSQL {
 
                     while (rs.next()) {
 
-                        System.out.println(rs.getString("accName"));//Field Name
-                        System.out.println(rs.getString("password"));//Field Name
-                        System.out.println(rs.getString("balance"));//Field Name
-                        System.out.println(rs.getString("IdNo"));//Field Name
-                        System.out.println(rs.getString("accNo"));//Field Name
+                        System.out.println(rs.getString("Name"));//Field Name
+                        System.out.println(rs.getString("Age"));//Field Name
+                       
 
                     }
 
@@ -172,33 +137,7 @@ public class KetNoiSQL {
                 break;
         }
 
-//try {
-//
-//ResultSet rs= kn.GetResultSet("Account");//Table Name
-//
-//while(rs.next())
-//
-//{
-//
-//System.out.println(rs.getString("accName"));//Field Name
-//System.out.println(rs.getString("password"));//Field Name
-//System.out.println(rs.getString("balance"));//Field Name
-//System.out.println(rs.getString("IdNo"));//Field Name
-//System.out.println(rs.getString("accNo"));//Field Name
-//
-//}
-//
-//kn.Close();
-//
-//} catch (SQLException ex) {
-//
-//Logger.getLogger(KetNoiSQL.class.getName()).log(Level.SEVERE, null, ex);
-//
-//} catch (Exception ex) {
-//
-//Logger.getLogger(KetNoiSQL.class.getName()).log(Level.SEVERE, null, ex);
-//
-//}
+
     }
 
 }
